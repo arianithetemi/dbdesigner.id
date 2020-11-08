@@ -2,7 +2,7 @@
 module.exports = {
   // options...
   devServer: {
-    proxy: "http://localhost"
+    proxy: "https://dbdesigner.neoxllc.com"
   },
   publicPath: process.env.NODE_ENV === "production" ? "/" : "/"
 };

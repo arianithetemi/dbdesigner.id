@@ -13,7 +13,7 @@ module.exports = {
         ];
 
         inquirer.prompt(questions).then(async answers => {
-            var respond = await axios.get(`http://localhost/api/v1/admin/user/list?keyword=${answers.keyword}`)
+            var respond = await axios.get(`https://dbdesigner.neoxllc.com/api/v1/admin/user/list?keyword=${answers.keyword}`)
             console.log("Respond get list user : ")
             if (respond.data.success === true) {
                 let count = 1;
@@ -24,6 +24,8 @@ module.exports = {
             } else {
                 console.log("Error " + respond.data.message)
             }
+        }).catch(err => {
+            console.log("Error " + err);
         });
     }
 }

@@ -44,7 +44,7 @@ module.exports = {
 
         inquirer.prompt(questions).then(async answers => {
             console.log(JSON.stringify(answers, null, '  '));
-            var respond = await axios.post("http://localhost/api/v1/admin/user/add", answers)
+            var respond = await axios.post("https://dbdesigner.neoxllc.com/api/v1/admin/user/add", answers)
             console.log("Respond :")
             if (respond.data.success === true) {
                 var user = respond.data.payload
@@ -60,6 +60,8 @@ module.exports = {
             } else {
                 console.log("Error " + respond.data.message)
             }
+        }).catch(err => {
+            console.log("Error " + err);
         });
     }
 }
