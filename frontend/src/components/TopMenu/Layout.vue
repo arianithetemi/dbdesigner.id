@@ -273,17 +273,6 @@
           </div>
           <div class="tab-group-caption">Page</div>
         </div>
-        <div class="tab-panel-group">
-          <div class="tab-group-content">
-            <div class="tab-content-segment">
-              <button class="fluent-big-button" @click="feedbackLink" style="width:60px">
-                <img :src="feedbackImage" />
-                <span class="label" style="margin-top:5px">Feedback</span>
-              </button>
-            </div>
-          </div>
-          <div class="tab-group-caption">Feedback</div>
-        </div>
       </div>
       <div class="tab-panel" id="tab_folder" style="display: block;">
         <div class="tab-panel-group">
@@ -313,7 +302,6 @@ import { message } from "ant-design-vue";
 import { mapMutations } from "vuex";
 import { mapActions } from "vuex";
 import { mapState } from "vuex";
-import feedbackImage from "@/assets/feedback-icon.png";
 import topicIcon from "@/assets/icons8-topic-96.png";
 import targetingFocusImage from "@/assets/square-targeting-focus.png";
 import gridIcon from "@/assets/grid-icon.png";
@@ -460,12 +448,6 @@ export default {
         this.SET_VISIBLE_RIBBON_MENU(true);
         this.activeRibbonMenu = name;
       }
-    },
-    feedbackLink() {
-      window.open(
-        "https://forms.gle/HXrKY23e3xx8aR4e8",
-        "_blank"
-      );
     }
   },
   data() {
@@ -476,8 +458,7 @@ export default {
       gridIcon: gridIcon,
       blankIcon: blankIcon,
       targetingFocusImage: targetingFocusImage,
-      helpSupport: helpSupport,
-      feedbackImage: feedbackImage
+      helpSupport: helpSupport
     };
   }
 };
